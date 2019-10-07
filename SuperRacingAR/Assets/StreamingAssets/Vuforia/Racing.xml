@@ -2,6 +2,9 @@
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
     <ImageTarget name="Start" size="10.000000 10.000000" />
+    <ImageTarget name="Reta4" size="10.000000 10.000000" />
+    <ImageTarget name="Reta3" size="10.000000 10.000000" />
+    <ImageTarget name="Reta2" size="10.000000 10.000000" />
     <ImageTarget name="Reta1" size="10.000000 10.000000" />
     <ImageTarget name="Curva4" size="10.000000 10.000000" />
     <ImageTarget name="Curva3" size="10.000000 10.000000" />
