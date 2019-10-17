@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="reta_pequena_1" size="0.100000 0.100000" />
+    <ImageTarget name="reta_pequena_2" size="0.100000 0.100000" />
+    <ImageTarget name="reta_pequena_3" size="0.100000 0.100000" />
+    <ImageTarget name="curva_pequena_1" size="0.100000 0.100000" />
+    <ImageTarget name="curva_pequena_2" size="0.100000 0.100000" />
+    <ImageTarget name="uturn_pequena_1" size="0.100000 0.100000" />
+    <ImageTarget name="uturn_pequena_2" size="0.100000 0.100000" />
+    <ImageTarget name="chicane_pequena" size="0.100000 0.100000" />
+    <ImageTarget name="chicane_media" size="0.100000 0.100000" />
+    <ImageTarget name="reta_media_1" size="0.100000 0.100000" />
+    <ImageTarget name="reta_media_2" size="0.100000 0.100000" />
+    <ImageTarget name="reta_media_3" size="0.100000 0.100000" />
+    <ImageTarget name="reta_longa_1" size="0.100000 0.100000" />
+    <ImageTarget name="reta_longa_2" size="0.100000 0.100000" />
+    <ImageTarget name="reta_longa_3" size="0.100000 0.100000" />
+    <ImageTarget name="curva_media_1" size="0.100000 0.100000" />
+    <ImageTarget name="curva_media_2" size="0.100000 0.100000" />
+    <ImageTarget name="inicio" size="0.100000 0.100000" />
+    <ImageTarget name="ponte" size="0.100000 0.100000" />
+  </Tracking>
+</QCARConfig>
