@@ -50,7 +50,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790c938f88f6549dc92f6d1e3a4a3911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  definitiveStraight: {fileID: 0}
+  definitiveStraight: {fileID: 8968700324089713320, guid: 1b86ec679c420794390feb531cef44cb,
+    type: 3}
   definitiveCurve: {fileID: 0}
 --- !u!114 &4106886198794000657
 MonoBehaviour:
@@ -64,8 +65,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f8824ac433ec4619a924cb4df450286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collisionController1: {fileID: 7101411265948614714}
-  collisionController2: {fileID: 6839391682682055273}
+  collisionPlacement: {fileID: 6839391682682055273}
+  collisionFixed: {fileID: 7101411265948614714}
 --- !u!1 &3584203364915342361
 GameObject:
   m_ObjectHideFlags: 0

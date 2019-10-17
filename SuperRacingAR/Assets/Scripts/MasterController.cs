@@ -6,7 +6,9 @@ public class MasterController : MonoBehaviour
 {
     TrackController[,] mapGrid = new TrackController[255,255];
     public GameObject definitiveStraight;
-    public GameObject definitiveCurve;
+    public GameObject definitiveCurveRightSmall;
+    public GameObject definitiveCurveLeftSmall;
+
 
     // Start is called before the first frame update
     void Start()
@@ -14,13 +16,16 @@ public class MasterController : MonoBehaviour
         mapGrid[127,127] = gameObject.GetComponent<TrackController>(); //Add start block to grid
         mapGrid[127,127].SetGridPos(new Vector2Int(127,127));
         mapGrid[127,127].SetOrientation(Orientation.UP);
+
+        Debug.Log(CombineOrientation(Orientation.DOWN,Orientation.DOWN));
     }
 
     public string getTrackName(Vector2Int gridPos){
-        return "Track_" + gridPos.x + "_" + gridPos.y;
+        return "Target_Straight";
+        //return "Track_" + gridPos.x + "_" + gridPos.y;
     }
 
-    public void OnNewTrack(string newTrack, Vector2Int newGridPos, Orientation newRoadOrientation){
+    public bool OnNewTrack(string newTrack, Vector2Int newGridPos, Orientation newRoadOrientation){
         if(mapGrid[newGridPos.x,newGridPos.y] == null){
             GameObject newTrackObj;
             Quaternion orientationQuat = Quaternion.identity;
@@ -31,23 +36,31 @@ public class MasterController : MonoBehaviour
                 case "Target_Straight":
                     newTrackObj = definitiveStraight;
                     break;
-                case "Target_Curve":
-                    newTrackObj = definitiveCurve;
+                case "Target_CurveRightSmall":
+                    newTrackObj = definitiveCurveRightSmall;
+                    break;
+                case "Target_CurveLeftSmall":
+                    newTrackObj = definitiveCurveLeftSmall;
                     break;
                 default:
                     Debug.LogError("Unknown track [" + newTrack + "]");
-                    return;
+                    return false;
             }
 
             newTrackObj = Instantiate(newTrackObj,new Vector3(newGridPos.x-127,0,newGridPos.y-127),orientationQuat);
             newTrackObj.name = getTrackName(newGridPos);
             newTrackObj.transform.parent = gameObject.transform;
             mapGrid[newGridPos.x,newGridPos.y] = newTrackObj.GetComponent<TrackController>();
+            mapGrid[newGridPos.x,newGridPos.y].enabled = true;
             mapGrid[newGridPos.x,newGridPos.y].SetGridPos(newGridPos);
             mapGrid[newGridPos.x,newGridPos.y].SetOrientation(newRoadOrientation);
+            mapGrid[newGridPos.x,newGridPos.y].SetCollisionFixed();
+            return true;
         }else{
             Debug.Log("Duplicate Track Detected and Not Added");
         }
+
+        return false;
     }
 
     public void OnTrackRemoved(Vector2Int gridPos){

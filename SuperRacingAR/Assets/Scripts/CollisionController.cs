@@ -25,12 +25,16 @@ public class CollisionController : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision collision){
-        if(trackController != null){
+        Debug.Log(gameObject.name + "(" + gameObject.transform.parent.name + ")" + " collided with " + collision.gameObject.name + "(" + collision.gameObject.transform.parent.name + ")");
+
+        if(trackController.enabled){
             Orientation newRoadOrientation = collision.gameObject.GetComponent<CollisionController>().orientation;
 
             Debug.Log("Creating new Road [" + collision.collider.transform.parent.name + "] with orientation " + newRoadOrientation);
             //TODO - Check Valid Way
             trackController.OnNewTrack(collision.collider.transform.parent.name, orientation, newRoadOrientation);
+        }else{
+            Debug.Log("Discarded collision");
         }
     }
 }

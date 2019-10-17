@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1279154477118769466
 Transform:
   m_ObjectHideFlags: 0
@@ -58,9 +58,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d21cf8b4d6a4742a26ef58bfc1afb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackController: {fileID: 0}
+  trackController: {fileID: 8381391171632936707}
   validWay: 1
-  orientation: 2
+  orientation: 0
 --- !u!54 &7065784487545104762
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -135,9 +135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9d21cf8b4d6a4742a26ef58bfc1afb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackController: {fileID: 0}
+  trackController: {fileID: 8381391171632936707}
   validWay: 0
-  orientation: 0
+  orientation: 2
 --- !u!54 &536598654387229752
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -163,6 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8968700324089713321}
+  - component: {fileID: 8381391171632936707}
   m_Layer: 0
   m_Name: Target_Straight
   m_TagString: Untagged
@@ -188,6 +189,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8381391171632936707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8968700324089713320}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8824ac433ec4619a924cb4df450286, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionPlacement: {fileID: 8480433791692627856}
+  collisionFixed: {fileID: 6869622797980236766}
 --- !u!1001 &2460847884319723475
 PrefabInstance:
   m_ObjectHideFlags: 0

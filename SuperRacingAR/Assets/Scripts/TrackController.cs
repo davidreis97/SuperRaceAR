@@ -5,9 +5,9 @@ public class TrackController : MonoBehaviour
 {   
     MasterController masterController;
 
-    public CollisionController collisionController1;
+    public CollisionController collisionPlacement;
 
-    public CollisionController collisionController2;
+    public CollisionController collisionFixed;
 
     Orientation orientation;
 
@@ -18,6 +18,16 @@ public class TrackController : MonoBehaviour
         masterController = GameObject.Find("Target_Start").GetComponent<MasterController>();
     }
 
+    public void SetCollisionPlacement(){
+        collisionFixed.gameObject.SetActive(false);
+        collisionPlacement.gameObject.SetActive(true);
+    }
+
+    public void SetCollisionFixed(){
+        collisionFixed.gameObject.SetActive(true);
+        collisionPlacement.gameObject.SetActive(false);
+    }
+
     public void SetOrientation(Orientation _orientation){
         orientation = _orientation;
     }
@@ -26,8 +36,9 @@ public class TrackController : MonoBehaviour
         gridPos = _gridPos;
     }
 
-    public void OnNewTrack(string trackName, Orientation roadOrientation, Orientation newRoadOrientation){ //Receives the name of the new track
+    public void OnNewTrack(string trackName, Orientation roadOrientation, Orientation newRoadOrientation){ //Receives the name of the new track        
         if(gridPos == null){
+            Debug.Log("Collision, no gridPos");
             return;
         }
         
@@ -55,7 +66,7 @@ public class TrackController : MonoBehaviour
 
         Debug.Log("NewGridPos: " + newGridPos + " Final Orientation: " + finalOrientation);
 
-        masterController.OnNewTrack(trackName,newGridPos,newRoadOrientation);
+        masterController.OnNewTrack(trackName,newGridPos,finalOrientation);
     }
 
     void Update()
