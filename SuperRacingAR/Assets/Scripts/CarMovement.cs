@@ -26,7 +26,7 @@ public class CarMovement : MonoBehaviour
     void Update()
     {
         //powerInput = Input.GetAxis("Vertical"); //Not being used since car always moves forward
-        turnInput = screenTouch.GetInput();
+        turnInput = screenTouch.GetInput() + Input.GetAxis("Horizontal");
     }
 
     private void FixedUpdate()

@@ -51,8 +51,6 @@ public class WeatherController : MonoBehaviour
     {
         int weatherID = weatherObj.weather[0].id;
 
-        weatherID = 616;
-
         if (weatherID >= 700 && weatherID < 900)
         {
             RainSystem.SetActive(false);
