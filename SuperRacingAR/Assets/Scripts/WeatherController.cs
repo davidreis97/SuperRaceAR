@@ -1,9 +1,24 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Application;
 using UnityEngine;
 using UnityEngine.Networking;
+
+
+[Serializable]
+public class Weather
+{
+    public int id;
+    public string main;
+}
+
+[Serializable]
+public class WeatherInfo
+{
+    public int id;
+    public string name;
+    public List<Weather> weather;
+}
 
 public class WeatherController : MonoBehaviour
 {
@@ -38,6 +53,8 @@ public class WeatherController : MonoBehaviour
         //    ParticleSystem.SetActive(true);
         //else
         //ParticleSystem.SetActive(false);
+
+        int weatherID = weatherObj.weather[0].id;
 
         Debug.Log("BOAS");
         Debug.Log(weatherObj.weather[0].id);
