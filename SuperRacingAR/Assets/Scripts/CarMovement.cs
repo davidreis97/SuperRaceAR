@@ -8,9 +8,10 @@ public class CarMovement : MonoBehaviour
     public float turnSpeed = 10f;
     private float originalSpeed;
     private float originalTurnSpeed;
-    private float powerInput;
+    //private float powerInput; //Not being used since car always moves forward
     private float turnInput;
     private Rigidbody carRigidbody;
+    private ScreenTouch screenTouch;
 
     void Awake()
     {
@@ -18,13 +19,14 @@ public class CarMovement : MonoBehaviour
         originalTurnSpeed = turnSpeed;
         carRigidbody = GetComponent<Rigidbody>();
         carRigidbody.maxAngularVelocity = 10;
+        screenTouch = GetComponent<ScreenTouch>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        powerInput = Input.GetAxis("Vertical");
-        turnInput = Input.GetAxis("Horizontal");
+        //powerInput = Input.GetAxis("Vertical"); //Not being used since car always moves forward
+        turnInput = screenTouch.GetInput();
     }
 
     private void FixedUpdate()
