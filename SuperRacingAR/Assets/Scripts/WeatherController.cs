@@ -27,7 +27,8 @@ public class WeatherController : MonoBehaviour
     private float apiCheckCountdown = API_CHECK_MAXTIME;
 
     public string CityID = "2735941";    // Distrito do Porto
-    public GameObject ParticleSystem;
+    public GameObject RainSystem;
+    public GameObject SnowSystem;
 
     // Start is called before the first frame update
     void Start()
@@ -48,16 +49,25 @@ public class WeatherController : MonoBehaviour
 
     public void CheckWeather(WeatherInfo weatherObj)
     {
-        //bool snowing = weatherObj.weather[0].main.Equals("Snow");
-        //if (snowing)
-        //    ParticleSystem.SetActive(true);
-        //else
-        //ParticleSystem.SetActive(false);
-
         int weatherID = weatherObj.weather[0].id;
 
-        Debug.Log("BOAS");
-        Debug.Log(weatherObj.weather[0].id);
+        weatherID = 616;
+
+        if (weatherID >= 700 && weatherID < 900)
+        {
+            RainSystem.SetActive(false);
+            SnowSystem.SetActive(false);
+        }
+        else if (weatherID >= 200 && weatherID < 600)
+        {
+            RainSystem.SetActive(true);
+            SnowSystem.SetActive(false);
+        }
+        else if (weatherID >= 600 && weatherID < 700)
+        {
+            RainSystem.SetActive(false);
+            SnowSystem.SetActive(true);
+        }
     }
 
     IEnumerator GetWeather(Action<WeatherInfo> onSuccess)
