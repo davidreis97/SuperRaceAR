@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/EditCar.unity
     guid: 8a374f43787af794882d0420268631ae
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CarMovement.unity
     guid: e389551fd116c48538a45661774c6cee
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: 89e1119737e5f483d9b610e40971a304
   m_configObjects: {}

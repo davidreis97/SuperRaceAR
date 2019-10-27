@@ -13,13 +13,18 @@ public class CarMovement : MonoBehaviour
     private Rigidbody carRigidbody;
     private ScreenTouch screenTouch;
 
+    private bool running;
+
+    private GameObject target_start;
     void Awake()
     {
         originalSpeed = speed;
         originalTurnSpeed = turnSpeed;
         carRigidbody = GetComponent<Rigidbody>();
         carRigidbody.maxAngularVelocity = 10;
+        carRigidbody.constraints = RigidbodyConstraints.FreezeAll;
         screenTouch = GetComponent<ScreenTouch>();
+        target_start = GameObject.Find("target_Start");
     }
 
     // Update is called once per frame
@@ -27,12 +32,22 @@ public class CarMovement : MonoBehaviour
     {
         //powerInput = Input.GetAxis("Vertical"); //Not being used since car always moves forward
         turnInput = screenTouch.GetInput() + Input.GetAxis("Horizontal");
+
+        //Set gravity to follow the track's orientation
+        Physics.gravity = -target_start.transform.up;
+    }
+
+    public void setRunning(bool _running){
+        running = _running;
+        carRigidbody.constraints = RigidbodyConstraints.None;
     }
 
     private void FixedUpdate()
     {
-        transform.Translate(Vector3.back * speed * Time.deltaTime);
-        carRigidbody.AddRelativeTorque(0f, turnInput * turnSpeed, 0f);
+        if(running){
+            transform.Translate(Vector3.back * speed * Time.deltaTime);
+            carRigidbody.AddRelativeTorque(0f, turnInput * turnSpeed, 0f);
+        }
     }
 
     public void slowDownSpeed()
