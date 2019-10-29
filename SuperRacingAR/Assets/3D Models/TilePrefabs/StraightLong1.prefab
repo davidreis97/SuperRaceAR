@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 3166359574045971534}
   m_Layer: 0
   m_Name: StraightLong1
-  m_TagString: Untagged
+  m_TagString: Track Segment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

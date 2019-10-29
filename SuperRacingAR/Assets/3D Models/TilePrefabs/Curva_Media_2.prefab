@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 685857514910460327}
   - component: {fileID: 6736838559241353822}
-  - component: {fileID: 7002586747686715979}
   m_Layer: 0
   m_Name: Curva_Media_2
-  m_TagString: Untagged
+  m_TagString: Track Segment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,18 +53,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9491704, y: 1, z: 2.0245223}
   m_Center: {x: -0.019575715, y: 0, z: -0.022854209}
---- !u!114 &7002586747686715979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 685857514910460324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6968a26531b0b486aa1d53c59fbd61b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &685857514957641231
 GameObject:
   m_ObjectHideFlags: 0
