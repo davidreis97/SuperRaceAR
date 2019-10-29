@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3369303435951412008}
-  - component: {fileID: 4790462134484638969}
-  - component: {fileID: 4106886198794000657}
   - component: {fileID: 8020956542653519569}
   m_Layer: 0
   m_Name: Target_Start
@@ -38,36 +36,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4790462134484638969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3369303435951412009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 790c938f88f6549dc92f6d1e3a4a3911, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  definitiveStraight: {fileID: 8968700324089713320, guid: 1b86ec679c420794390feb531cef44cb,
-    type: 3}
-  definitiveCurveRightSmall: {fileID: 0}
-  definitiveCurveLeftSmall: {fileID: 0}
---- !u!114 &4106886198794000657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3369303435951412009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f8824ac433ec4619a924cb4df450286, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collisionPlacement: {fileID: 0}
-  collisionFixed: {fileID: 0}
 --- !u!65 &8020956542653519569
 BoxCollider:
   m_ObjectHideFlags: 0
