@@ -42,6 +42,12 @@ public class CarMovement : MonoBehaviour
         carRigidbody.constraints = RigidbodyConstraints.None;
     }
 
+    void OnCollisionEnter(Collision col){
+        if(col.collider.isTrigger){
+            this.transform.SetParent(col.gameObject.transform.parent,true);
+        }
+    }
+
     private void FixedUpdate()
     {
         if(running){

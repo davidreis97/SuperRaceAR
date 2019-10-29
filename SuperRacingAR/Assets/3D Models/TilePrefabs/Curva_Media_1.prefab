@@ -1,19 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!64 &4550585381602777034
+--- !u!64 &5104470482069781180
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8664403539426290059}
+  m_GameObject: {fileID: 1375734095489869703}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
-  m_Mesh: {fileID: 1897029051232040898, guid: 95151e16315b54006addf6314cf51859, type: 3}
+  m_Mesh: {fileID: 1837948549032616267, guid: 69f765e5f0fc444df960504fbc64d963, type: 3}
 --- !u!64 &2703627052455397391
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -37,6 +37,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1049751920273466394}
+  - component: {fileID: 8805240252592109693}
   m_Layer: 0
   m_Name: Curva_Media_1
   m_TagString: Untagged
@@ -61,20 +62,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &5104470482069781180
+--- !u!65 &8805240252592109693
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8336023373900131485}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9491704, y: 1, z: 2.0245223}
+  m_Center: {x: -0.019575715, y: 0, z: -0.022854209}
+--- !u!64 &4550585381602777034
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1375734095489869703}
+  m_GameObject: {fileID: 8664403539426290059}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
-  m_Mesh: {fileID: 1837948549032616267, guid: 69f765e5f0fc444df960504fbc64d963, type: 3}
+  m_Mesh: {fileID: 1897029051232040898, guid: 95151e16315b54006addf6314cf51859, type: 3}
 --- !u!1001 &801579206523449474
 PrefabInstance:
   m_ObjectHideFlags: 0
