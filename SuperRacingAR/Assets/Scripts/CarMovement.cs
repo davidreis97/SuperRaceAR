@@ -17,7 +17,7 @@ public class CarMovement : MonoBehaviour
 
     private bool outOfBounds;
 
-    private GameObject target_start;
+    private GameObject current_track;
 
     void Awake()
     {
@@ -27,7 +27,7 @@ public class CarMovement : MonoBehaviour
         carRigidbody.maxAngularVelocity = 10;
         screenTouch = GetComponent<ScreenTouch>();
 
-        target_start = GameObject.Find("target_Start");
+        current_track = GameObject.Find("target_Start");
         carRigidbody.constraints = RigidbodyConstraints.FreezeAll;
     }
 
@@ -38,7 +38,7 @@ public class CarMovement : MonoBehaviour
         turnInput = screenTouch.GetInput() + Input.GetAxis("Horizontal");
 
         //Set gravity to follow the track's orientation
-        Physics.gravity = -target_start.transform.up;
+        Physics.gravity = -current_track.transform.up;
     }
 
     public void setRunning(bool _running){
@@ -58,6 +58,7 @@ public class CarMovement : MonoBehaviour
         {
             outOfBounds = false;
             this.transform.SetParent(other.gameObject.transform, true);
+            current_track = other.gameObject;
         }
         else if (other.gameObject.tag == "Out of Map")
         {
