@@ -93,9 +93,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7529456694407964181}
+  - component: {fileID: 151588557928640002}
   m_Layer: 0
   m_Name: ZigzagGrande1
-  m_TagString: Untagged
+  m_TagString: Track Segment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,6 +119,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &151588557928640002
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5836745584869684050}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 3}
+  m_Center: {x: -0.5, y: 0, z: -0.5}
 --- !u!64 &3321234156127990627
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -333,11 +347,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2322987308917735931}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: d5b356de18e7042fe8691ab1af87abfa,
-        type: 3}
-      propertyPath: m_Name
-      value: railDouble (1)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d5b356de18e7042fe8691ab1af87abfa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -392,6 +401,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: d5b356de18e7042fe8691ab1af87abfa,
+        type: 3}
+      propertyPath: m_Name
+      value: railDouble (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5b356de18e7042fe8691ab1af87abfa, type: 3}
@@ -489,11 +503,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7702524454426614455}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: d5b356de18e7042fe8691ab1af87abfa,
-        type: 3}
-      propertyPath: m_Name
-      value: railDouble
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d5b356de18e7042fe8691ab1af87abfa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -548,6 +557,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: d5b356de18e7042fe8691ab1af87abfa,
+        type: 3}
+      propertyPath: m_Name
+      value: railDouble
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5b356de18e7042fe8691ab1af87abfa, type: 3}

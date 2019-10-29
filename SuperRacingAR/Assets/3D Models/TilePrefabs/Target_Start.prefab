@@ -1,19 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!64 &3443581643958256754
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7265746129763830297}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &3369303435951412009
 GameObject:
   m_ObjectHideFlags: 0
@@ -25,9 +11,10 @@ GameObject:
   - component: {fileID: 3369303435951412008}
   - component: {fileID: 4790462134484638969}
   - component: {fileID: 4106886198794000657}
+  - component: {fileID: 8020956542653519569}
   m_Layer: 0
   m_Name: Target_Start
-  m_TagString: Untagged
+  m_TagString: Track Segment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -80,6 +67,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionPlacement: {fileID: 0}
   collisionFixed: {fileID: 0}
+--- !u!65 &8020956542653519569
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3369303435951412009}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!64 &1518728870032006377
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -188,6 +188,20 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 2391379635145715318, guid: 5d52a3a2b3b38474eaeac65417c0e485, type: 3}
+--- !u!64 &3443581643958256754
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7265746129763830297}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 0}
 --- !u!1001 &1726269034475901712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -195,11 +209,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3369303435951412008}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 8e636609801754740a27009427444923,
-        type: 3}
-      propertyPath: m_Name
-      value: flagCheckers
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8e636609801754740a27009427444923,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -255,6 +264,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8e636609801754740a27009427444923,
+        type: 3}
+      propertyPath: m_Name
+      value: flagCheckers
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e636609801754740a27009427444923, type: 3}
 --- !u!1 &7265746129763830297 stripped
@@ -276,11 +290,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3369303435951412008}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 8e636609801754740a27009427444923,
-        type: 3}
-      propertyPath: m_Name
-      value: flagCheckers (1)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 8e636609801754740a27009427444923,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -336,6 +345,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8e636609801754740a27009427444923,
+        type: 3}
+      propertyPath: m_Name
+      value: flagCheckers (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e636609801754740a27009427444923, type: 3}
 --- !u!1 &5644760895946443861 stripped
@@ -357,11 +371,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3369303435951412008}
     m_Modifications:
-    - target: {fileID: 6289461231896475465, guid: 8060a336d29ca47e98bfebeb82569fb7,
-        type: 3}
-      propertyPath: m_Name
-      value: RaceCarWithTouch
-      objectReference: {fileID: 0}
     - target: {fileID: 6995214412693980506, guid: 8060a336d29ca47e98bfebeb82569fb7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -416,6 +425,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289461231896475465, guid: 8060a336d29ca47e98bfebeb82569fb7,
+        type: 3}
+      propertyPath: m_Name
+      value: RaceCarWithTouch
       objectReference: {fileID: 0}
     - target: {fileID: 2623710432250734330, guid: 8060a336d29ca47e98bfebeb82569fb7,
         type: 3}

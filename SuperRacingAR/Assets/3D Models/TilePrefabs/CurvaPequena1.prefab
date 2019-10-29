@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 1746691195890945304}
   m_Layer: 0
   m_Name: CurvaPequena1
-  m_TagString: Untagged
+  m_TagString: Track Segment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,11 +226,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5287543009339587480}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
-        type: 3}
-      propertyPath: m_Name
-      value: roadCornerSmallBorder
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 95151e16315b54006addf6314cf51859,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -300,6 +295,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
+        type: 3}
+      propertyPath: m_Name
+      value: roadCornerSmallBorder
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95151e16315b54006addf6314cf51859, type: 3}
@@ -316,11 +316,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4862051293472268504}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
-        type: 3}
-      propertyPath: m_Name
-      value: roadCornerSmallBorder
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 95151e16315b54006addf6314cf51859,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -390,6 +385,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
+        type: 3}
+      propertyPath: m_Name
+      value: roadCornerSmallBorder
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95151e16315b54006addf6314cf51859, type: 3}
@@ -406,11 +406,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7641684263407293903}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
-        type: 3}
-      propertyPath: m_Name
-      value: roadCornerSmallBorder
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 95151e16315b54006addf6314cf51859,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -480,6 +475,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
+        type: 3}
+      propertyPath: m_Name
+      value: roadCornerSmallBorder
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95151e16315b54006addf6314cf51859, type: 3}
@@ -496,11 +496,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4837277516575126230}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
-        type: 3}
-      propertyPath: m_Name
-      value: roadCornerSmallBorder
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 95151e16315b54006addf6314cf51859,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -570,6 +565,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
+        type: 3}
+      propertyPath: m_Name
+      value: roadCornerSmallBorder
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95151e16315b54006addf6314cf51859, type: 3}
@@ -667,11 +667,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4113776119664921753}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
-        type: 3}
-      propertyPath: m_Name
-      value: roadCornerSmallBorder
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 95151e16315b54006addf6314cf51859,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -741,6 +736,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
+        type: 3}
+      propertyPath: m_Name
+      value: roadCornerSmallBorder
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95151e16315b54006addf6314cf51859, type: 3}
