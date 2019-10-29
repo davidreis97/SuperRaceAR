@@ -46,6 +46,12 @@ public class CarMovement : MonoBehaviour
         carRigidbody.constraints = RigidbodyConstraints.None;
     }
 
+    private void OnTriggerExit(Collider other){
+        if(other.gameObject.tag == "Out of Map"){
+            outOfBounds = false;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Track Segment")
