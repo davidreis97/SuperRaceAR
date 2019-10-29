@@ -14,17 +14,18 @@ public class CarMovement : MonoBehaviour
     private ScreenTouch screenTouch;
 
     private bool running;
+    //private GameObject target_start;
 
-    private GameObject target_start;
     void Awake()
     {
         originalSpeed = speed;
         originalTurnSpeed = turnSpeed;
         carRigidbody = GetComponent<Rigidbody>();
         carRigidbody.maxAngularVelocity = 10;
-        carRigidbody.constraints = RigidbodyConstraints.FreezeAll;
         screenTouch = GetComponent<ScreenTouch>();
-        target_start = GameObject.Find("target_Start");
+
+        //target_start = GameObject.Find("target_Start");
+        //carRigidbody.constraints = RigidbodyConstraints.FreezeAll;
     }
 
     // Update is called once per frame
@@ -34,7 +35,7 @@ public class CarMovement : MonoBehaviour
         turnInput = screenTouch.GetInput() + Input.GetAxis("Horizontal");
 
         //Set gravity to follow the track's orientation
-        Physics.gravity = -target_start.transform.up;
+        //Physics.gravity = -target_start.transform.up;
     }
 
     public void setRunning(bool _running){
@@ -42,9 +43,23 @@ public class CarMovement : MonoBehaviour
         carRigidbody.constraints = RigidbodyConstraints.None;
     }
 
-    void OnCollisionEnter(Collision col){
-        if(col.collider.isTrigger){
-            this.transform.SetParent(col.gameObject.transform.parent,true);
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Track Segment")
+        {
+            this.transform.SetParent(other.gameObject.transform, true);
+        }
+        else if (other.gameObject.tag == "Out of Map")
+        {
+            slowDownSpeed();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Out of Map")
+        {
+            resetSpeed();
         }
     }
 

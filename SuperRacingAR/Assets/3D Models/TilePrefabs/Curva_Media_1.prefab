@@ -38,6 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1049751920273466394}
   - component: {fileID: 8805240252592109693}
+  - component: {fileID: 8728619419439468280}
   m_Layer: 0
   m_Name: Curva_Media_1
   m_TagString: Untagged
@@ -75,6 +76,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9491704, y: 1, z: 2.0245223}
   m_Center: {x: -0.019575715, y: 0, z: -0.022854209}
+--- !u!114 &8728619419439468280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8336023373900131485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6968a26531b0b486aa1d53c59fbd61b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &4550585381602777034
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -96,16 +109,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1049751920273466394}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
-        type: 3}
-      propertyPath: m_Name
-      value: roadCornerSmallBorder
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 95151e16315b54006addf6314cf51859,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -160,6 +163,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
+        type: 3}
+      propertyPath: m_Name
+      value: roadCornerSmallBorder
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95151e16315b54006addf6314cf51859, type: 3}
