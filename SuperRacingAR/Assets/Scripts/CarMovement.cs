@@ -13,7 +13,7 @@ public class CarMovement : MonoBehaviour
     private Rigidbody carRigidbody;
     private ScreenTouch screenTouch;
 
-    private bool running;
+    private bool running = true;
     //private GameObject target_start;
 
     void Awake()
@@ -65,6 +65,7 @@ public class CarMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         if(running){
             transform.Translate(Vector3.back * speed * Time.deltaTime);
             carRigidbody.AddRelativeTorque(0f, turnInput * turnSpeed, 0f);

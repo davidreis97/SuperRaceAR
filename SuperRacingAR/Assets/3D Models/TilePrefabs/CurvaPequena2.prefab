@@ -142,6 +142,7 @@ Transform:
   - {fileID: 4525421672801952831}
   - {fileID: 649286180667437140}
   - {fileID: 5565505488216882722}
+  - {fileID: 8901167840720826327}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -332,6 +333,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5565505488216882722}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
+        type: 3}
+      propertyPath: m_Name
+      value: roadCornerSmallBorder
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 95151e16315b54006addf6314cf51859,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -401,11 +407,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
-        type: 3}
-      propertyPath: m_Name
-      value: roadCornerSmallBorder
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95151e16315b54006addf6314cf51859, type: 3}
@@ -496,6 +497,81 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6105340258090313778}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8115537399056902763
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6456714655547414755}
+    m_Modifications:
+    - target: {fileID: 803719607774119357, guid: e6648373939c849919de0acc2ce0823c,
+        type: 3}
+      propertyPath: m_Name
+      value: Ground of the World
+      objectReference: {fileID: 0}
+    - target: {fileID: 803719607774119356, guid: e6648373939c849919de0acc2ce0823c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 803719607774119356, guid: e6648373939c849919de0acc2ce0823c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 803719607774119356, guid: e6648373939c849919de0acc2ce0823c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 803719607774119356, guid: e6648373939c849919de0acc2ce0823c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 803719607774119356, guid: e6648373939c849919de0acc2ce0823c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 803719607774119356, guid: e6648373939c849919de0acc2ce0823c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 803719607774119356, guid: e6648373939c849919de0acc2ce0823c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 803719607774119356, guid: e6648373939c849919de0acc2ce0823c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 803719607774119356, guid: e6648373939c849919de0acc2ce0823c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 803719607774119356, guid: e6648373939c849919de0acc2ce0823c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 803719607774119356, guid: e6648373939c849919de0acc2ce0823c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e6648373939c849919de0acc2ce0823c, type: 3}
+--- !u!4 &8901167840720826327 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 803719607774119356, guid: e6648373939c849919de0acc2ce0823c,
+    type: 3}
+  m_PrefabInstance: {fileID: 8115537399056902763}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8189480159711230645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -503,6 +579,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 649286180667437140}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
+        type: 3}
+      propertyPath: m_Name
+      value: roadCornerSmallBorder
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 95151e16315b54006addf6314cf51859,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -572,11 +653,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
-        type: 3}
-      propertyPath: m_Name
-      value: roadCornerSmallBorder
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95151e16315b54006addf6314cf51859, type: 3}
@@ -593,6 +669,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5232967843203226277}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
+        type: 3}
+      propertyPath: m_Name
+      value: roadCornerSmallBorder
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 95151e16315b54006addf6314cf51859,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -662,11 +743,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
-        type: 3}
-      propertyPath: m_Name
-      value: roadCornerSmallBorder
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95151e16315b54006addf6314cf51859, type: 3}
@@ -683,6 +759,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6267724208361323325}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
+        type: 3}
+      propertyPath: m_Name
+      value: roadCornerSmallBorder
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 95151e16315b54006addf6314cf51859,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -752,11 +833,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
-        type: 3}
-      propertyPath: m_Name
-      value: roadCornerSmallBorder
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95151e16315b54006addf6314cf51859, type: 3}
@@ -773,6 +849,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4525421672801952831}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
+        type: 3}
+      propertyPath: m_Name
+      value: roadCornerSmallBorder
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 95151e16315b54006addf6314cf51859,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -842,11 +923,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 95151e16315b54006addf6314cf51859,
-        type: 3}
-      propertyPath: m_Name
-      value: roadCornerSmallBorder
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95151e16315b54006addf6314cf51859, type: 3}
