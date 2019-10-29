@@ -13,8 +13,11 @@ public class CarMovement : MonoBehaviour
     private Rigidbody carRigidbody;
     private ScreenTouch screenTouch;
 
-    private bool running = true;
-    //private GameObject target_start;
+    private bool running;
+
+    private bool outOfBounds;
+
+    private GameObject target_start;
 
     void Awake()
     {
@@ -24,8 +27,8 @@ public class CarMovement : MonoBehaviour
         carRigidbody.maxAngularVelocity = 10;
         screenTouch = GetComponent<ScreenTouch>();
 
-        //target_start = GameObject.Find("target_Start");
-        //carRigidbody.constraints = RigidbodyConstraints.FreezeAll;
+        target_start = GameObject.Find("target_Start");
+        carRigidbody.constraints = RigidbodyConstraints.FreezeAll;
     }
 
     // Update is called once per frame
@@ -35,7 +38,7 @@ public class CarMovement : MonoBehaviour
         turnInput = screenTouch.GetInput() + Input.GetAxis("Horizontal");
 
         //Set gravity to follow the track's orientation
-        //Physics.gravity = -target_start.transform.up;
+        Physics.gravity = -target_start.transform.up;
     }
 
     public void setRunning(bool _running){
@@ -47,41 +50,24 @@ public class CarMovement : MonoBehaviour
     {
         if (other.gameObject.tag == "Track Segment")
         {
+            outOfBounds = false;
             this.transform.SetParent(other.gameObject.transform, true);
         }
         else if (other.gameObject.tag == "Out of Map")
         {
-            slowDownSpeed();
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Out of Map")
-        {
-            resetSpeed();
+            outOfBounds = true;
         }
     }
 
     private void FixedUpdate()
     {
-
         if(running){
-            transform.Translate(Vector3.back * speed * Time.deltaTime);
+            float finalSpeed = speed;
+            if(outOfBounds){
+                finalSpeed *= 0.2f;
+            }
+            transform.Translate(Vector3.back * finalSpeed * Time.deltaTime);
             carRigidbody.AddRelativeTorque(0f, turnInput * turnSpeed, 0f);
         }
-    }
-
-    public void slowDownSpeed()
-    {
-        speed = speed * 0.2f;
-        turnSpeed = turnSpeed * 0.5f;
-
-    }
-
-    public void resetSpeed()
-    {
-        speed = originalSpeed;
-        turnSpeed = originalTurnSpeed;
     }
 }
