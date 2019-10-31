@@ -74,7 +74,8 @@ public class CarMovement : MonoBehaviour
                 finalSpeed *= 0.2f;
             }
             transform.Translate(Vector3.back * finalSpeed * Time.deltaTime);
-            carRigidbody.AddRelativeTorque(0f, turnInput * turnSpeed, 0f);
+            transform.Rotate(Vector3.up,turnInput * turnSpeed);
+            //carRigidbody.AddRelativeTorque(0f, turnInput * turnSpeed, 0f);
         }
     }
 }
