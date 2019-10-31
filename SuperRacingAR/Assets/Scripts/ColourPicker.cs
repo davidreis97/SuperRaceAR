@@ -14,6 +14,8 @@ public class ColourPicker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Screen.orientation = ScreenOrientation.Portrait;
+
         colourMat = carBody.GetComponent<Renderer>().sharedMaterials[1];
         
         if (PlayerPrefs.GetFloat("playerR") == 0 && PlayerPrefs.GetFloat("playerG") == 0 && PlayerPrefs.GetFloat("playerB") == 0)
