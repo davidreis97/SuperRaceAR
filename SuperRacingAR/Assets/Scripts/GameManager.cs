@@ -12,11 +12,13 @@ public class GameManager : MonoBehaviour
 
     public void StartGame(){
         GameObject start = GameObject.Find("RaceCarWithTouch");
+        GameObject startBot = GameObject.Find("RaceCarBot");
 
         if(!start){
             return;
         }
 
+        startBot.GetComponent<CarBotMovement>().setRunning(true);
         start.GetComponent<CarMovement>().setRunning(true);
     }
 
