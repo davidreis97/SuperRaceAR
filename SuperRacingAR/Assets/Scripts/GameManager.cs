@@ -1,21 +1,58 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject preGame;
-    public GameObject game;
-    public GameObject postGame;
-    
+    public GameObject preGameUI;
+    public GameObject gameUI;
+    public GameObject postGameUI;
+    //car colour:
+    public GameObject carBody;
+    public GameObject botBody;
+    private const float rDefault = 0.960784f, gDefault = 0.72549f, bDefault = 0.258824f;
+    private Material colourMat;
+
     // Start is called before the first frame update
     void Start()
     {
         Screen.orientation = ScreenOrientation.AutoRotation;
-        postGame.SetActive(false);
-        game.SetActive(false);
-        preGame.SetActive(true);
+        postGameUI.SetActive(false);
+        gameUI.SetActive(false);
+        preGameUI.SetActive(true);
+        setCarColour();
+    }
+
+    private void setCarColour()
+    {
+        float r, g, b;
+
+        colourMat = carBody.GetComponent<Renderer>().sharedMaterials[1];
+
+        if (PlayerPrefs.GetFloat("playerR") == 0 && PlayerPrefs.GetFloat("playerG") == 0 && PlayerPrefs.GetFloat("playerB") == 0)
+        {
+            r = rDefault;
+            g = gDefault;
+            b = bDefault;
+        }
+        else
+        {
+            r = PlayerPrefs.GetFloat("playerR");
+            g = PlayerPrefs.GetFloat("playerG");
+            b = PlayerPrefs.GetFloat("playerB");
+        }
+
+        Color colour = new Color(r, g, b);
+        colourMat.SetColor("_Color", colour);
+
+        if(r != rDefault && g != gDefault && b != bDefault)
+        {
+            colourMat = botBody.GetComponent<Renderer>().sharedMaterials[1];
+            Color c = new Color(rDefault, rDefault, rDefault);
+            colourMat.SetColor("_Color", c);
+        }
     }
 
     public void StartGame(){
@@ -27,9 +64,9 @@ public class GameManager : MonoBehaviour
         }
 
         startBot.GetComponent<CarBotMovement>().setRunning(true);
-        preGame.SetActive(false);
+        preGameUI.SetActive(false);
         start.GetComponent<CarMovement>().setRunning(true);
-        game.SetActive(true);
+        gameUI.SetActive(true);
     }
 
     public void Back ()

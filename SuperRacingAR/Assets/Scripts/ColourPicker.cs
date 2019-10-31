@@ -9,7 +9,7 @@ public class ColourPicker : MonoBehaviour
     public GameObject carBody;
     private const float rDefault = 0.960784f, gDefault = 0.72549f, bDefault = 0.258824f;
     private Material colourMat;
-    float cR, cG, cB;
+    private float cR, cG, cB;
 
     // Start is called before the first frame update
     void Start()
