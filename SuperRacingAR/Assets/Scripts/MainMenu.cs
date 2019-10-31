@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
     
     void Start()
     {
-        
+        Screen.orientation = ScreenOrientation.Portrait;
     }
 
     /*
@@ -24,7 +24,7 @@ public class MainMenu : MonoBehaviour
      * */
     public void Play()
     {
-
+        SceneManager.LoadScene("GameScene");
     }
 
     public void EditCar()
