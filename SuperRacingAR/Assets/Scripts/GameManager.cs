@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     public GameObject postGameUI;
     //car colour:
     public GameObject carBody;
-    public GameObject botBody;
     private const float rDefault = 0.960784f, gDefault = 0.72549f, bDefault = 0.258824f;
     private Material colourMat;
 
@@ -46,13 +45,6 @@ public class GameManager : MonoBehaviour
 
         Color colour = new Color(r, g, b);
         colourMat.SetColor("_Color", colour);
-
-        if(r != rDefault && g != gDefault && b != bDefault)
-        {
-            colourMat = botBody.GetComponent<Renderer>().sharedMaterials[1];
-            Color c = new Color(rDefault, rDefault, rDefault);
-            colourMat.SetColor("_Color", c);
-        }
     }
 
     public void StartGame(){
