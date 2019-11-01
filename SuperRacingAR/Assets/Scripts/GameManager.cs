@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class GameManager : MonoBehaviour
     public GameObject carBody;
     private const float rDefault = 0.960784f, gDefault = 0.72549f, bDefault = 0.258824f;
     private Material colourMat;
+    //game timer
+    [SerializeField] private Text Countdown;
+    private bool runTimer = false, canCount = false, doOnce = false;
+    private float mainTimer = 3.5f;
+    private float timer;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +28,7 @@ public class GameManager : MonoBehaviour
         gameUI.SetActive(false);
         preGameUI.SetActive(true);
         setCarColour();
+        timer = mainTimer;
     }
 
     private void setCarColour()
@@ -47,18 +54,19 @@ public class GameManager : MonoBehaviour
         colourMat.SetColor("_Color", colour);
     }
 
-    public void StartGame(){
+    public void StartGame()
+    {
         GameObject start = GameObject.Find("RaceCarWithTouch");
-        GameObject startBot = GameObject.Find("RaceCarBot");
 
-        if(!start){
+        if (!start){
             return;
         }
 
-        startBot.GetComponent<CarBotMovement>().setRunning(true);
         preGameUI.SetActive(false);
-        start.GetComponent<CarMovement>().setRunning(true);
         gameUI.SetActive(true);
+        runTimer = true;
+        canCount = true;
+
     }
 
     public void Back ()
@@ -69,6 +77,29 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (runTimer)
+        {
+            timer -= Time.deltaTime;
+            if (timer > 0.0f && canCount)
+            {
+                Countdown.text = timer.ToString("F");
+            }
+            else if (timer <= 0.0f && !doOnce)
+            {
+                canCount = false;
+                doOnce = true;
+                Countdown.text = "GO!";
+                timer = 0.0f;
+
+                GameObject start = GameObject.Find("RaceCarWithTouch");
+                GameObject startBot = GameObject.Find("RaceCarBot");
+                startBot.GetComponent<CarBotMovement>().setRunning(true);
+                start.GetComponent<CarMovement>().setRunning(true);
+            }
+            else if (!canCount && doOnce && timer <= 0.0f)
+            {
+                Countdown.CrossFadeAlpha(0.0f, 0.5f, false);
+            }
+        }
     }
 }
