@@ -5,23 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject menu, howToPlay, about;
+    public GameObject menu, howToPlay, about, title;
     
     void Start()
     {
         Screen.orientation = ScreenOrientation.Portrait;
         menu.SetActive(true);
+        title.SetActive(true);
         howToPlay.SetActive(false);
         about.SetActive(false);
     }
-
-    /*
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    */
 
     /*
      * Buttons' Functions
@@ -39,12 +32,14 @@ public class MainMenu : MonoBehaviour
     public void HowToPLay()
     {
         menu.SetActive(false);
+        title.SetActive(false);
         howToPlay.SetActive(true);
     }
 
     public void About()
     {
         menu.SetActive(false);
+        title.SetActive(false);
         about.SetActive(true);
     }
 
@@ -53,6 +48,7 @@ public class MainMenu : MonoBehaviour
         about.SetActive(false);
         howToPlay.SetActive(false);
         menu.SetActive(true);
+        title.SetActive(true);
     }
 
     public void Exit()
