@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 5396146528791815363}
   - component: {fileID: 6688781053451109448}
   - component: {fileID: 3806488014483914610}
+  - component: {fileID: 5842877218439554262}
   m_Layer: 0
   m_Name: BotNodeBack
   m_TagString: Untagged
@@ -293,8 +294,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.5193024, y: 1, z: 0.9999999}
+  m_Center: {x: -0.040784433, y: 0, z: 0}
 --- !u!114 &3806488014483914610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,6 +309,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextBotNode: {fileID: 90435221312768987}
+--- !u!114 &5842877218439554262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9002104837222398106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93fd0c430a5104153804220fd1a61814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endGameDetector: {fileID: 834788697389313508, guid: 54e7d2406c22447518949810be1adb15,
+    type: 3}
+  numberOfLaps: 1
 --- !u!1001 &1726269034475901712
 PrefabInstance:
   m_ObjectHideFlags: 0

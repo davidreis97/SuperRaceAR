@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public GameObject preGameUI;
     public GameObject gameUI;
     public GameObject postGameUI;
+    public GameObject playerWon;
+    public GameObject botWon;
     //car colour:
     public GameObject carBody;
     private const float rDefault = 0.960784f, gDefault = 0.72549f, bDefault = 0.258824f;
@@ -67,6 +69,25 @@ public class GameManager : MonoBehaviour
         runTimer = true;
         canCount = true;
 
+    }
+
+    public void FinishGame(Winner winner){
+
+        if(winner == Winner.Bot){
+            botWon.SetActive(true);
+        }else if(winner == Winner.Player){
+            playerWon.SetActive(true);
+        }
+
+        gameUI.SetActive(false);
+        postGameUI.SetActive(true);
+
+        GameObject start = GameObject.Find("RaceCarWithTouch");
+        GameObject startBot = GameObject.Find("RaceCarBot");
+        startBot.GetComponent<CarBotMovement>().setRunning(false);
+        start.GetComponent<CarMovement>().setRunning(false);
+
+        Debug.Log("Finished the game");
     }
 
     public void Back ()

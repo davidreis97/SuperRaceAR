@@ -38,7 +38,6 @@ public class CarBotMovement : MonoBehaviour
             Vector3 targetDir = nextNode.transform.position - transform.position;
 
             float rotationAngle = Vector3.SignedAngle(targetDir.normalized, transform.forward, Vector3.up) / 180;
-            Debug.Log(rotationAngle);
             if (Mathf.Abs(1 - rotationAngle) > 0.05f)
             {
                 transform.Rotate(Vector3.up, rotationAngle * turningSpeed);
@@ -50,7 +49,12 @@ public class CarBotMovement : MonoBehaviour
 
     public void setRunning(bool _running){
         running = _running;
-        rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+
+        if(running){
+            rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        }else{
+            rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+        }
     }
 
     void OnTriggerEnter(Collider col){
@@ -62,6 +66,11 @@ public class CarBotMovement : MonoBehaviour
                 visitedNodes.Add(bn);
                 nextNode = bn.nextBotNode;
             }
+        }
+
+        else if (col.gameObject.tag == "Track Segment")
+        {
+            this.transform.SetParent(col.gameObject.transform, true);
         }
     }
 

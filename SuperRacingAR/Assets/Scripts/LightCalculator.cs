@@ -6,12 +6,13 @@ public class LightCalculator : MonoBehaviour
 {
     LightsBySensor lbs;
     Light spotlight;
-    public float intensityMultiplier = 1;
+    private float intensityMultiplier;
     // Start is called before the first frame update
     void Start()
     {
         lbs = GameObject.Find("LightController").GetComponent<LightsBySensor>();
         spotlight = GetComponent<Light>();
+        intensityMultiplier = 1.2f;
     }
 
     // Update is called once per frame

@@ -58,7 +58,11 @@ public class CarMovement : MonoBehaviour
 
     public void setRunning(bool _running){
         running = _running;
-        carRigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        if(running){
+            carRigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        }else{
+            carRigidbody.constraints = RigidbodyConstraints.FreezeAll;
+        }
     }
 
     private void OnTriggerExit(Collider other){
