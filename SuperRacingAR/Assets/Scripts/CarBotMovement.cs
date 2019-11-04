@@ -26,8 +26,26 @@ public class CarBotMovement : MonoBehaviour
         visitedNodes = new ArrayList();
     }
 
-    void Update(){
+    void Update()
+    {
         
+    }
+
+    void FixedUpdate()
+    {
+        if (running)
+        {
+            Vector3 targetDir = nextNode.transform.position - transform.position;
+
+            float rotationAngle = Vector3.SignedAngle(targetDir.normalized, transform.forward, Vector3.up) / 180;
+            Debug.Log(rotationAngle);
+            if (Mathf.Abs(1 - rotationAngle) > 0.05f)
+            {
+                transform.Rotate(Vector3.up, rotationAngle * turningSpeed);
+            }
+
+            transform.Translate(targetDir.normalized * speed * Time.deltaTime, Space.World);
+        }
     }
 
     public void setRunning(bool _running){
@@ -47,17 +65,12 @@ public class CarBotMovement : MonoBehaviour
         }
     }
 
-    void FixedUpdate(){
-        if(running){
-            Vector3 targetDir = nextNode.transform.position - transform.position;
-            
-            float rotationAngle = Vector3.SignedAngle(targetDir.normalized, transform.forward, Vector3.up)/180;
-            Debug.Log(rotationAngle);
-            if(Mathf.Abs(1-rotationAngle) > 0.05f){
-                transform.Rotate(Vector3.up, rotationAngle * turningSpeed);
-            }
-
-            transform.Translate(targetDir.normalized * speed * Time.deltaTime, Space.World);
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Car")
+        {
+            Debug.Log("COLLIDING BOT: " + GetComponent<Collider>());
+            Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
         }
     }
 }

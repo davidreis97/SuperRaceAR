@@ -41,9 +41,24 @@ public class CarMovement : MonoBehaviour
         Physics.gravity = -current_track.transform.up;
     }
 
+    private void FixedUpdate()
+    {
+        if (running)
+        {
+            float finalSpeed = speed;
+            if (outOfBounds)
+            {
+                finalSpeed *= 0.2f;
+            }
+            transform.Translate(Vector3.back * finalSpeed * Time.deltaTime);
+            transform.Rotate(Vector3.up, turnInput * turnSpeed);
+            //carRigidbody.AddRelativeTorque(0f, turnInput * turnSpeed, 0f);
+        }
+    }
+
     public void setRunning(bool _running){
         running = _running;
-        carRigidbody.constraints = RigidbodyConstraints.None;
+        carRigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
 
     private void OnTriggerExit(Collider other){
@@ -66,16 +81,12 @@ public class CarMovement : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void OnCollisionEnter(Collision collision)
     {
-        if(running){
-            float finalSpeed = speed;
-            if(outOfBounds){
-                finalSpeed *= 0.2f;
-            }
-            transform.Translate(Vector3.back * finalSpeed * Time.deltaTime);
-            transform.Rotate(Vector3.up,turnInput * turnSpeed);
-            //carRigidbody.AddRelativeTorque(0f, turnInput * turnSpeed, 0f);
+        if (collision.gameObject.tag == "Car")
+        {
+            Debug.Log("COLLIDING PLAYER: " + GetComponent<Collider>());
+            Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
         }
     }
 }
