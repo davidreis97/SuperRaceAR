@@ -5,10 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject menu, howToPlay, about;
     
     void Start()
     {
         Screen.orientation = ScreenOrientation.Portrait;
+        menu.SetActive(true);
+        howToPlay.SetActive(false);
+        about.SetActive(false);
     }
 
     /*
@@ -32,14 +36,23 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("EditCar");
     }
 
-    public void howToPLay()
+    public void HowToPLay()
     {
-
+        menu.SetActive(false);
+        howToPlay.SetActive(true);
     }
 
     public void About()
     {
+        menu.SetActive(false);
+        about.SetActive(true);
+    }
 
+    public void Return()
+    {
+        about.SetActive(false);
+        howToPlay.SetActive(false);
+        menu.SetActive(true);
     }
 
     public void Exit()
