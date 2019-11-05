@@ -73,7 +73,7 @@ public class CarMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Track Segment")
+        if (other.gameObject.tag == "Track Segment" && running)
         {
             outOfBounds = false;
             this.transform.SetParent(other.gameObject.transform, true);

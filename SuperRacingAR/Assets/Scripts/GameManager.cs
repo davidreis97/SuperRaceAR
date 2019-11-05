@@ -58,12 +58,6 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        GameObject start = GameObject.Find("RaceCarWithTouch");
-
-        if (!start){
-            return;
-        }
-
         preGameUI.SetActive(false);
         gameUI.SetActive(true);
         runTimer = true;

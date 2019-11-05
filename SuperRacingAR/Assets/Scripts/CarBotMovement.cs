@@ -68,7 +68,7 @@ public class CarBotMovement : MonoBehaviour
             }
         }
 
-        else if (col.gameObject.tag == "Track Segment")
+        else if (col.gameObject.tag == "Track Segment" && running)
         {
             this.transform.SetParent(col.gameObject.transform, true);
         }

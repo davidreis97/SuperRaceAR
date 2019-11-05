@@ -70,7 +70,7 @@ public class WeatherController : MonoBehaviour
 
     IEnumerator GetWeather(Action<WeatherInfo> onSuccess)
     {
-        using (UnityWebRequest req = UnityWebRequest.Get(String.Format("http://api.openweathermap.org/data/2.5/weather?id={0}&APPID={1}", CityID, API_KEY)))
+        using (UnityWebRequest req = UnityWebRequest.Get(String.Format("https://api.openweathermap.org/data/2.5/weather?id={0}&APPID={1}", CityID, API_KEY)))
         {
             yield return req.SendWebRequest();
             while (!req.isDone)
