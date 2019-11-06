@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Winner{Player, Bot}
+public enum Winner { Player, Bot }
 
 public class EndGame : MonoBehaviour
 {
@@ -14,28 +14,16 @@ public class EndGame : MonoBehaviour
     void Start()
     {
         fireworks.Stop();
-
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter(Collider col)
     {
-        
-    }
-
-    void OnTriggerEnter(Collider col){
-        if(col.tag == "Car"){
+        if (col.tag == "Car")
+        {
             fireworks.Play();
 
-            Winner winner;
-
-            if(col.GetComponent<CarBotMovement>() != null){
-                winner = Winner.Bot;
-            }else{
-                winner = Winner.Player;
-            }
-
+            Winner winner = col.GetComponent<CarBotMovement>() != null ? Winner.Bot : Winner.Player;
             gameManager.FinishGame(winner);
         }
     }

@@ -94,7 +94,6 @@ public class CarMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Car")
         {
-            Debug.Log("COLLIDING PLAYER: " + GetComponent<Collider>());
             Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
         }
     }

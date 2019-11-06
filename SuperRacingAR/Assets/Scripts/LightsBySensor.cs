@@ -16,10 +16,9 @@ public class LightsBySensor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(LightSensor.current != null){
-            if (LightSensor.current.enabled){
-                LightLevel = (int) LightSensor.current.lightLevel.ReadValue();
-            }
+        if (LightSensor.current != null && LightSensor.current.enabled)
+        {
+            LightLevel = (int) LightSensor.current.lightLevel.ReadValue();
         }
     }
 }

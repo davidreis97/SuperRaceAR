@@ -7,6 +7,7 @@ public class LightCalculator : MonoBehaviour
     LightsBySensor lbs;
     Light spotlight;
     private float intensityMultiplier;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,10 +19,9 @@ public class LightCalculator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(lbs != null && lbs.LightLevel > 0){
-            if(spotlight != null){
-                spotlight.intensity = (1 - ((float) lbs.LightLevel/500f)) * intensityMultiplier;
-            }
+        if (lbs != null && lbs.LightLevel > 0 && spotlight != null)
+        {
+            spotlight.intensity = (1 - ((float) lbs.LightLevel / 500f)) * intensityMultiplier;
         }
     }
 }

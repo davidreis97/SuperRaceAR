@@ -12,10 +12,12 @@ public class GameManager : MonoBehaviour
     public GameObject postGameUI;
     public GameObject playerWon;
     public GameObject botWon;
+
     //car colour:
     public GameObject carBody;
     private const float rDefault = 0.960784f, gDefault = 0.72549f, bDefault = 0.258824f;
     private Material colourMat;
+
     //game timer
     [SerializeField] private Text Countdown;
     private bool runTimer = false, canCount = false, doOnce = false;
@@ -65,11 +67,15 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void FinishGame(Winner winner){
+    public void FinishGame(Winner winner)
+    {
 
-        if(winner == Winner.Bot){
+        if (winner == Winner.Bot)
+        {
             botWon.SetActive(true);
-        }else if(winner == Winner.Player){
+        }
+        else if (winner == Winner.Player)
+        {
             playerWon.SetActive(true);
         }
 
@@ -78,13 +84,12 @@ public class GameManager : MonoBehaviour
 
         GameObject start = GameObject.Find("RaceCarWithTouch");
         GameObject startBot = GameObject.Find("RaceCarBot");
-        startBot.GetComponent<CarBotMovement>().setRunning(false);
-        start.GetComponent<CarMovement>().SetRunning(false);
 
-        Debug.Log("Finished the game");
+        startBot.GetComponent<CarBotMovement>().SetRunning(false);
+        start.GetComponent<CarMovement>().SetRunning(false);
     }
 
-    public void Back ()
+    public void Back()
     {
         SceneManager.LoadScene("MainMenu");
     }
@@ -95,6 +100,7 @@ public class GameManager : MonoBehaviour
         if (runTimer)
         {
             timer -= Time.deltaTime;
+
             if (timer > 0.0f && canCount)
             {
                 Countdown.text = timer.ToString("F");
@@ -108,7 +114,7 @@ public class GameManager : MonoBehaviour
 
                 GameObject start = GameObject.Find("RaceCarWithTouch");
                 GameObject startBot = GameObject.Find("RaceCarBot");
-                startBot.GetComponent<CarBotMovement>().setRunning(true);
+                startBot.GetComponent<CarBotMovement>().SetRunning(true);
                 start.GetComponent<CarMovement>().SetRunning(true);
             }
             else if (!canCount && doOnce && timer <= 0.0f)

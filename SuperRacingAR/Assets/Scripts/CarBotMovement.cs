@@ -4,31 +4,24 @@ using UnityEngine;
 
 public class CarBotMovement : MonoBehaviour
 {
-    public ArrayList visitedNodes;
-
-    public BotNode nextNode;
-
     public float speed = 1f;
-
     public float turningSpeed = 10f;
-
     public bool running;
 
+    public ArrayList visitedNodes;
+    public BotNode nextNode;
     new private Rigidbody rigidbody;
 
-    void Start(){
+    void Start()
+    {
         rigidbody = GetComponent<Rigidbody>();
 
-        if(!running){
+        if (!running)
+        {
             rigidbody.constraints = RigidbodyConstraints.FreezeAll;
         }
 
         visitedNodes = new ArrayList();
-    }
-
-    void Update()
-    {
-        
     }
 
     void FixedUpdate()
@@ -47,27 +40,32 @@ public class CarBotMovement : MonoBehaviour
         }
     }
 
-    public void setRunning(bool _running){
+    public void SetRunning(bool _running)
+    {
         running = _running;
 
-        if(running){
+        if (running)
+        {
             rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-        }else{
+        }
+        else
+        {
             rigidbody.constraints = RigidbodyConstraints.FreezeAll;
         }
     }
 
-    void OnTriggerEnter(Collider col){
+    void OnTriggerEnter(Collider col)
+    {
         BotNode bn = col.gameObject.GetComponent<BotNode>();
 
-        if(bn != null){
-            if(bn.nextBotNode != null && !visitedNodes.Contains(bn.nextBotNode)){
-                Debug.Log("Touched " + bn.gameObject.name + " from " + bn.gameObject.transform.parent.gameObject.name);
+        if (bn != null)
+        {
+            if (bn.nextBotNode != null && !visitedNodes.Contains(bn.nextBotNode))
+            {
                 visitedNodes.Add(bn);
                 nextNode = bn.nextBotNode;
             }
         }
-
         else if (col.gameObject.tag == "Track Segment" && running)
         {
             this.transform.SetParent(col.gameObject.transform, true);
@@ -78,7 +76,6 @@ public class CarBotMovement : MonoBehaviour
     {
         if (collision.gameObject.tag == "Car")
         {
-            Debug.Log("COLLIDING BOT: " + GetComponent<Collider>());
             Physics.IgnoreCollision(collision.collider, GetComponent<Collider>());
         }
     }
