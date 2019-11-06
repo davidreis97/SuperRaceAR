@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
         GameObject start = GameObject.Find("RaceCarWithTouch");
         GameObject startBot = GameObject.Find("RaceCarBot");
         startBot.GetComponent<CarBotMovement>().setRunning(false);
-        start.GetComponent<CarMovement>().setRunning(false);
+        start.GetComponent<CarMovement>().SetRunning(false);
 
         Debug.Log("Finished the game");
     }
@@ -109,7 +109,7 @@ public class GameManager : MonoBehaviour
                 GameObject start = GameObject.Find("RaceCarWithTouch");
                 GameObject startBot = GameObject.Find("RaceCarBot");
                 startBot.GetComponent<CarBotMovement>().setRunning(true);
-                start.GetComponent<CarMovement>().setRunning(true);
+                start.GetComponent<CarMovement>().SetRunning(true);
             }
             else if (!canCount && doOnce && timer <= 0.0f)
             {

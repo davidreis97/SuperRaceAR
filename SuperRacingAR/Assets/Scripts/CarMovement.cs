@@ -8,37 +8,34 @@ public class CarMovement : MonoBehaviour
     public float turnSpeed = 10f;
     private float originalSpeed;
     private float originalTurnSpeed;
-    //private float powerInput; //Not being used since car always moves forward
     private float turnInput;
-    private Rigidbody carRigidbody;
-    private ScreenTouch screenTouch;
 
     private bool running;
-
     private bool outOfBounds;
 
-    private GameObject current_track;
+    private Rigidbody carRigidbody;
+    private ScreenTouch screenTouch;
+    private GameObject currentTrack;
 
     void Awake()
     {
         originalSpeed = speed;
         originalTurnSpeed = turnSpeed;
+
         carRigidbody = GetComponent<Rigidbody>();
         carRigidbody.maxAngularVelocity = 10;
-        screenTouch = GetComponent<ScreenTouch>();
-
-        current_track = GameObject.Find("target_Start");
         carRigidbody.constraints = RigidbodyConstraints.FreezeAll;
+
+        screenTouch = GetComponent<ScreenTouch>();
+        currentTrack = GameObject.Find("target_Start");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //powerInput = Input.GetAxis("Vertical"); //Not being used since car always moves forward
-        turnInput = screenTouch.GetInput() + Input.GetAxis("Horizontal");
+        turnInput = screenTouch.GetInput();
 
-        //Set gravity to follow the track's orientation
-        Physics.gravity = -current_track.transform.up;
+        // Set gravity to follow the track's orientation
+        Physics.gravity = -currentTrack.transform.up;
     }
 
     private void FixedUpdate()
@@ -46,27 +43,35 @@ public class CarMovement : MonoBehaviour
         if (running)
         {
             float finalSpeed = speed;
+
             if (outOfBounds)
             {
                 finalSpeed *= 0.2f;
             }
+
             transform.Translate(Vector3.back * finalSpeed * Time.deltaTime);
             transform.Rotate(Vector3.up, turnInput * turnSpeed);
-            //carRigidbody.AddRelativeTorque(0f, turnInput * turnSpeed, 0f);
         }
     }
 
-    public void setRunning(bool _running){
+    public void SetRunning(bool _running)
+    {
         running = _running;
-        if(running){
+
+        if (running)
+        {
             carRigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-        }else{
+        }
+        else
+        {
             carRigidbody.constraints = RigidbodyConstraints.FreezeAll;
         }
     }
 
-    private void OnTriggerExit(Collider other){
-        if(other.gameObject.tag == "Out of Map"){
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Out of Map")
+        {
             outOfBounds = false;
         }
     }
@@ -76,8 +81,8 @@ public class CarMovement : MonoBehaviour
         if (other.gameObject.tag == "Track Segment" && running)
         {
             outOfBounds = false;
-            this.transform.SetParent(other.gameObject.transform, true);
-            current_track = other.gameObject;
+            currentTrack = other.gameObject;
+            this.transform.SetParent(currentTrack.transform, true);
         }
         else if (other.gameObject.tag == "Out of Map")
         {
