@@ -6,6 +6,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
 
+/* https://gitlab.com/jonnohopkins/tmp-hyperlinks/blob/master/Assets/OpenHyperlinks.cs */
+
 // somewhat based upon the TextMesh Pro example script: TMP_TextSelector_B
 [RequireComponent(typeof(TextMeshProUGUI))]
 public class OpenLink : MonoBehaviour, IPointerClickHandler
